@@ -1,0 +1,81 @@
+{
+    "$schema": "../chain.schema.json",
+    "chain_name": "sifchain",
+    "status": "live",
+    "network_type": "mainnet",
+    "pretty_name": "Sifchain",
+    "chain_id": "sifchain-1",
+    "bech32_prefix": "sif",
+    "daemon_name": "sifnoded",
+    "node_home": "$HOME/.sifnoded",
+    "genesis": {
+        "genesis_url": "https://raw.githubusercontent.com/Sifchain/networks/master/betanet/sifchain-1/genesis.json"
+    },
+    "key_algos": [
+        "secp256k1"
+    ],
+    "slip44": 118,
+    "fees": {
+        "fee_tokens": [
+            {
+                "denom": "rowan",
+                "fixed_min_gas_price": 0
+            }
+        ]
+    },
+    "codebase": {
+        "git_repo": "https://github.com/Sifchain/sifnode",
+        "recommended_version": "v0.9.10",
+        "compatible_versions": [
+            "v0.9.10",
+        ],
+        "binaries": {
+            "linux/amd64": "https://github.com/Sifchain/sifnode/releases/download/betanet-0.9.10/sifnoded-betanet-0.9.10-linux-amd64.zip"
+        }
+    },
+    "peers": {
+        "seeds": [
+            {
+                "id": "83adaa38d1c15450056050fd4c9763fcc7e02e2c <- INSERT SIFCHAIN SEED ID",
+                "address": "ec2-44-234-84-104.us-west-2.compute.amazonaws.com:26656 <- INSERT SIFCHAIN SEED ADDRESS",
+                "provider": "notional <- INSERT SIFCHAIN SEED PROVIDER"
+            }
+        ],
+        "persistent_peers": [
+            {
+                "id": "8f67a2fcdd7ade970b1983bf1697111d35dfdd6f <- SIFCHAIN PEER ID",
+                "address": "52.79.199.137:26656 <- INSERT SIFCHAIN PEER ID",
+                "provider": "cosmostation <- INSERT SIFCHAIN PEER ID"
+            }
+        ]
+    },
+    "apis": {
+        "rpc": [
+            {
+                "address": "https://rpc.sifchain.finance/",
+                "provider": "sifcore"
+            },
+            {
+                "address": "https://rpc-sifchain.keplr.app",
+                "provider": "chainapsis"
+            }
+        ],
+        "rest": [
+            {
+                "address": "https://api.sifchain.finance/",
+                "provider": "sifcore"
+            },
+            {
+                "address": "https://lcd-sifchain.keplr.app",
+                "provider": "chainapsis"
+            }
+        ]
+    },
+    "explorers": [
+        {
+            "kind": "mintscan",
+            "url": "https://www.mintscan.io/sifchain",
+            "tx_page": "https://www.mintscan.io/sifchain/txs/${txHash}"
+        }
+    ]
+}
